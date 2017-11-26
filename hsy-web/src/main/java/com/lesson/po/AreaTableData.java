@@ -13,5 +13,9 @@ import javax.persistence.Entity;
 public class AreaTableData extends BaseEntity {
     private long countryId; // 国家地区名
 
-    private String tableHeadNodeId; // 表格头部节点ID
+    private long tableHeadNodeId; // 表格头部节点ID
+
+    private long menuNodeId; // 菜单节点ID
+
+    private String content; // 数据内容
 }

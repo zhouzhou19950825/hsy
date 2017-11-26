@@ -21,9 +21,13 @@ public class TableHeadNode extends BaseEntity {
 
     private int isLeaf; // 是否叶子节点
 
-    private String url; // URL
+    private long menuNodeId; // 菜单节点ID
 
     private long areaId; // 大区域ID
 
-    private int group; // 组别（？）
+    private int myGroup; // 组别（？）
+
+    private int height; // 占高
+
+    private int weight; // 占宽
 }

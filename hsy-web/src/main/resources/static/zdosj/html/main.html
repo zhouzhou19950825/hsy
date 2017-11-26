@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>edit</title>
+    <!-- <link rel="stylesheet" href="../css/demo.css" type="text/css"> -->
+    <link rel="stylesheet" href="../css/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css">
+    <link href="../css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
+    <!-- <script type="text/javascript" src="../js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="../js/jquery.ztree.exedit.js"></script> -->
+    <script>
+        $(document).ready(function(){
+            $(".ifr").css({
+                height: $(window).height()-109+"px"});
+            $(".right").css({
+                height: $(window).height()-118+"px",
+            });
+        })
+    </script>
+    <style type="text/css" media="screen">
+    </style>
+</head>
+<body style="overflow:-Scroll;overflow-y:hidden">
+<div class="header">
+    <img src="../img/Logo3.png" alt="">
+    <div class="tit">
+        <div class="left-tit"><strong>中东欧数据</strong></div>
+        <div class="right-tit">
+            <ul>
+                <li>数据库介绍</li>
+                <li>解释说明</li>
+                <li>使用帮助</li>
+                <li>数据库首页</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="content1">
+    <div class="left">
+        <iframe src="1.html" frameborder="0" class="ifr"></iframe>
+    </div>
+    <div class="right">
+        <iframe src="2.html" frameborder="0" class="ifchart"></iframe>
+    </div>
+</div>
+
+</body>
+</html>

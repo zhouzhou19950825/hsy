@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 @Data
 @Entity
 public class Country extends BaseEntity {
+    private long areaId; // 大区域名字
+
     private String countryName; // 国家或地区名字
 
     private String countryNum; // 国家或地区编号

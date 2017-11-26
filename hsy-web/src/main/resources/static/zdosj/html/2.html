@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="../js/echarts.min.js"></script>
+    <script src="../useJs/1.js"></script>
+    <title></title>
+</head>
+<body style="text-align: center;">
+<div class="top_table">
+    <!-- <iframe src="2.html" frameborder="0" class="itable"></iframe> -->
+    <table>
+        <caption>
+            <h2 id="areaTableName"></h2>
+            <h2 id="areaTableEnglishName"></h2>
+        </caption>
+        <tbody id="myTable">
+        <!--<tr>-->
+        <!--<td>阿尔巴尼亚</td>-->
+        <!--<td>28748</td>-->
+        <!--<td>109.9</td>-->
+        <!--<td>106.3</td>-->
+        <!--<td>105.4</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>爱沙尼亚</td>-->
+        <!--<td>45339</td>-->
+        <!--<td>31.9    </td>-->
+        <!--<td>31.4</td>-->
+        <!--<td>    30.9</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>波兰</td>-->
+        <!--<td>312685</td>-->
+        <!--<td>124.6</td>-->
+        <!--<td>    124.2   </td>-->
+        <!--<td>124.1</td>-->
+        <!--</tr>-->
+        </tbody>
+    </table>
+    <!--<nav>-->
+    <!--<ul class="pagination">-->
+    <!--<li class="disabled"><a href="#" aria-label="Previous"> <span aria-hidden="true">首页</span></a>-->
+    <!--</li>-->
+    <!--<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«上一页</span> </a></li>-->
+    <!--<li class="active"><a href="#">1<span class="sr-only">(currentPage)</span></a></li>-->
+    <!--<li><a href="#" onclick="doPage(3,2)">2 <span class="sr-only" onclick="doPage(3,2)">(currentPage)</span></a>-->
+    <!--</li>-->
+    <!--<li><a href="#" aria-label="Next"> <span aria-hidden="true" onclick="doPage(4,0)">»下一页</span>-->
+    <!--</a></li>-->
+    <!--<li><a href="#" aria-label="Next"> <span aria-hidden="true" onclick="doPage(5,0)">末页</span>-->
+    <!--</a></li>-->
+    <!--<span class="jtable-page-size-change"> <span>每页: </span>-->
+    <!--<select onchange="doPageSize(this.value)">-->
+    <!--<option value="10" selected="selected">10</option>-->
+    <!--<option value="20">20</option>-->
+    <!--<option value="50">50</option>-->
+    <!--</select>-->
+    <!--</span>-->
+    <!--<li class="disabled">-->
+    <!--<span aria-hidden="true">总共16条-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</nav>-->
+</div>
+<div class="bottom-echart">
+    <caption id="areaTableNameAndAreaTableEnglishName">国土面积与人口密度 柱状图<br>
+        <p>Country Area and Population Density</p></caption>
+    <div id="main" style="width: 80%;height:400px;"></div>
+</div>
+
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        title: {
+            text: '某地区蒸发量和降水量',
+            subtext: '纯属虚构'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['蒸发量', '降水量']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        calculable: true,
+        xAxis: [
+            {
+                type: 'category',
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: '蒸发量',
+                type: 'bar',
+                data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: '降水量',
+                type: 'bar',
+                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint: {
+                    data: [
+                        {name: '年最高', value: 182.2, xAxis: 7, yAxis: 183, symbolSize: 18},
+                        {name: '年最低', value: 2.3, xAxis: 11, yAxis: 3}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+</script>
+</body>
+</html>
