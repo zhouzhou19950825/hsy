@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="../css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
     <script src="../js/echarts.min.js"></script>
-    <script src="../useJs/1.js"></script>
+    <script src="../useJs/2.js"></script>
     <title></title>
 </head>
 <body style="text-align: center;">
@@ -18,7 +19,16 @@
             <h2 id="areaTableName"></h2>
             <h2 id="areaTableEnglishName"></h2>
         </caption>
-        <tbody id="myTable">
+        <thead id="myTable">
+        <!--<tr>-->
+            <!--<th>国家或地区</th>-->
+            <!--<th>国土面积（平方公里）</th>-->
+            <!--<th>2005年人口密度</th>-->
+            <!--<th>2010年人口密度</th>-->
+            <!--<th>2015年人口密度</th>-->
+        <!--</tr>-->
+        </thead>
+        <tbody id="myTableData">
         <!--<tr>-->
         <!--<td>阿尔巴尼亚</td>-->
         <!--<td>28748</td>-->
@@ -29,15 +39,15 @@
         <!--<tr>-->
         <!--<td>爱沙尼亚</td>-->
         <!--<td>45339</td>-->
-        <!--<td>31.9    </td>-->
+        <!--<td>31.9</td>-->
         <!--<td>31.4</td>-->
-        <!--<td>    30.9</td>-->
+        <!--<td> 30.9</td>-->
         <!--</tr>-->
         <!--<tr>-->
         <!--<td>波兰</td>-->
         <!--<td>312685</td>-->
         <!--<td>124.6</td>-->
-        <!--<td>    124.2   </td>-->
+        <!--<td> 124.2</td>-->
         <!--<td>124.1</td>-->
         <!--</tr>-->
         </tbody>
@@ -68,24 +78,27 @@
     <!--</ul>-->
     <!--</nav>-->
 </div>
+<br>
 <div class="bottom-echart">
-    <caption id="areaTableNameAndAreaTableEnglishName">国土面积与人口密度 柱状图<br>
-        <p>Country Area and Population Density</p></caption>
+    <caption id="areaTableNameCap">国土面积与人口密度 柱状图<br>
+        <p id="areaTableEnglishNameCap">Country Area and Population Density</p></caption>
     <div id="main" style="width: 80%;height:400px;"></div>
 </div>
 
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     option = {
+        // 表头
         title: {
-            text: '某地区蒸发量和降水量',
-            subtext: '纯属虚构'
+            text: '',
+            subtext: ''
         },
         tooltip: {
             trigger: 'axis'
         },
         legend: {
-            data: ['蒸发量', '降水量']
+            // 叶子结点
+            data: []
         },
         toolbox: {
             show: true,
@@ -101,7 +114,8 @@
         xAxis: [
             {
                 type: 'category',
-                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+                // 国家地区
+                data: []
             }
         ],
         yAxis: [
@@ -109,43 +123,26 @@
                 type: 'value'
             }
         ],
+        // 叶子节点的值
         series: [
-            {
-                name: '蒸发量',
-                type: 'bar',
-                data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
-                markPoint: {
-                    data: [
-                        {type: 'max', name: '最大值'},
-                        {type: 'min', name: '最小值'}
-                    ]
-                },
-                markLine: {
-                    data: [
-                        {type: 'average', name: '平均值'}
-                    ]
-                }
-            },
-            {
-                name: '降水量',
-                type: 'bar',
-                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
-                markPoint: {
-                    data: [
-                        {name: '年最高', value: 182.2, xAxis: 7, yAxis: 183, symbolSize: 18},
-                        {name: '年最低', value: 2.3, xAxis: 11, yAxis: 3}
-                    ]
-                },
-                markLine: {
-                    data: [
-                        {type: 'average', name: '平均值'}
-                    ]
-                }
-            }
+//             {
+//                 name: '蒸发量',
+//                 type: 'bar',
+//                 data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+//                 markPoint: {
+//                     data: [
+//                         {type: 'max', name: '最大值'},
+//                         {type: 'min', name: '最小值'}
+//                     ]
+//                 },
+//                 markLine: {
+//                     data: [
+//                         {type: 'average', name: '平均值'}
+//                     ]
+//                 }
+//             }
         ]
     };
-
-    myChart.setOption(option);
 </script>
 </body>
 </html>
