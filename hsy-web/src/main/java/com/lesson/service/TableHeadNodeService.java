@@ -20,5 +20,5 @@ public interface TableHeadNodeService {
 
     TableHeadNode getById(Long id);
 
-    List<TableHeadNode> getByMenuNodeId(long areaId);
+    List<TableHeadNode> getByMenuNodeId(long menuNodeId);
 }

@@ -45,4 +45,9 @@ public class AreaTableDataServiceImpl implements AreaTableDataService {
     public AreaTableData getByCountryIdAndTableHeadNodeId(long countryId, long tableHeadNodeId) {
         return areaTableDataRepository.getByCountryIdAndTableHeadNodeId(countryId, tableHeadNodeId);
     }
+
+    @Override
+    public List<AreaTableData> getByMenuNodeId(long menuNodeId) {
+        return areaTableDataRepository.getByMenuNodeId(menuNodeId);
+    }
 }

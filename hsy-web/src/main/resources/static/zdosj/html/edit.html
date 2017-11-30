@@ -177,17 +177,17 @@
             zTree.editName(treeNode);
         }
 
-        function remove(e) {
-            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
-                nodes = zTree.getSelectedNodes(),
-                treeNode = nodes[0];
-            if (nodes.length == 0) {
-                alert("请先选择一个节点");
-                return;
-            }
-            var callbackFlag = $("#callbackTrigger").attr("checked");
-            zTree.removeNode(treeNode, callbackFlag);
-        }
+//        function remove(e) {
+//            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+//                nodes = zTree.getSelectedNodes(),
+//                treeNode = nodes[0];
+//            if (nodes.length == 0) {
+//                alert("请先选择一个节点");
+//                return;
+//            }
+//            var callbackFlag = $("#callbackTrigger").attr("checked");
+//            zTree.removeNode(treeNode, callbackFlag);
+//        }
 
         function clearChildren(e) {
             var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
@@ -235,7 +235,7 @@
         //-->
     </script>
 
-    <script type="text/javascript" src="../min.js/table.min.js"></script>
+    <script type="text/javascript" src="../useJs/table.js"></script>
 
     <!--<script src="../useJs/1.js"></script>-->
 
@@ -253,7 +253,7 @@
             <li>
                 <button class="btn btn-small" id="addParent"><i class="icon-plus icon-white"></i>父节点</button>
                 <button class="btn btn-small" id="addLeaf"><i class="icon-plus icon-white"></i>子节点</button>
-                <button class="btn btn-small" id="edit"><i class="icon-pencil icon-white"></i>编辑</button>
+                <!--<button class="btn btn-small" id="edit"><i class="icon-pencil icon-white"></i>编辑</button>-->
                 <button class="btn btn-small" id="remove"><i class="icon-remove icon-white"></i>删除</button>
             </li>
         </ul>

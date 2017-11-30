@@ -84,4 +84,41 @@ public class MenuNodeController {
             return null;
         }
     }
+
+    /**
+     * 删除菜单节点
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/deleteMenuNode")
+    public String deleteMenuNode(long id) {
+        try {
+            menuNodeService.deleteMenuNode(id);
+            return "SUCCESS";
+        } catch (Exception e) {
+            LOGGER.info("deleteMenuNode:" + e.getMessage());
+        }
+        return null;
+    }
+
+    /**
+     * 更新菜单节点
+     *
+     * @param id
+     * @param isLeaf
+     * @return
+     */
+    @GetMapping("/updateOneMenuNode")
+    public MenuNode updateOneMenuNode(long id, int isLeaf) {
+        try {
+            MenuNode menuNode = menuNodeService.findOne(id);
+            menuNode.setIsLeaf(isLeaf);
+            menuNode = menuNodeService.updateMenuNode(menuNode);
+            return menuNode;
+        } catch (Exception e) {
+            LOGGER.info("updateOneMenuNode:" + e.getMessage());
+        }
+        return null;
+    }
 }

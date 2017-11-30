@@ -19,4 +19,6 @@ public interface AreaTableDataService {
     List<AreaTableData> getByTableHeadNodeId(long tableHeadNodeId);
 
     AreaTableData getByCountryIdAndTableHeadNodeId(long countryId, long tableHeadNodeId);
+
+    List<AreaTableData> getByMenuNodeId(long menuNodeId);
 }
