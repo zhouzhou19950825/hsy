@@ -89,4 +89,41 @@ public class TableHeadNodeController {
         }
         return null;
     }
+
+    /**
+     * 删除节点
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/deleteTableHeadNode")
+    public String deleteTableHeadNode(long id) {
+        try {
+            tableHeadNodeService.deleteTableHeadNode(id);
+            return "SUCCESS";
+        } catch (Exception e) {
+            LOGGER.info("deleteTableHeadNode:" + e.getMessage());
+        }
+        return null;
+    }
+
+    /**
+     * 根据菜单节点ID删除表格头节点
+     *
+     * @param menuNodeId
+     * @return
+     */
+    @GetMapping("/deleteTableHeadNodeByMenuNodeId")
+    public String deleteTableHeadNodeByMenuNodeId(long menuNodeId) {
+        try {
+            List<TableHeadNode> tableHeadNodeList = tableHeadNodeService.getByMenuNodeId(menuNodeId);
+            for (int i = 0; i < tableHeadNodeList.size(); i++) {
+                tableHeadNodeService.deleteTableHeadNode(tableHeadNodeList.get(i).getId());
+            }
+            return "SUCCESS";
+        } catch (Exception e) {
+            LOGGER.info("deleteTableHeadNodeByMenuNodeId:" + e.getMessage());
+        }
+        return null;
+    }
 }

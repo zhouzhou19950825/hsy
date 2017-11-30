@@ -63,4 +63,24 @@ public class AreaTableController {
         }
         return null;
     }
+
+    /**
+     * 根据菜单节点ID删除表格
+     *
+     * @param menuNodeId
+     * @return
+     */
+    @GetMapping("/deleteAreaTableByMenuNodeId")
+    public String deleteAreaTableByMenuNodeId(long menuNodeId) {
+        try {
+            AreaTable areaTable = areaTableService.getByMenuNodeId(menuNodeId);
+            if (areaTable != null) {
+                areaTableService.deleteAreaTable(areaTable.getId());
+            }
+            return "SUCCESS";
+        } catch (Exception e) {
+            LOGGER.info("deleteAreaTableByMenuNodeId:" + e.getMessage());
+        }
+        return null;
+    }
 }
