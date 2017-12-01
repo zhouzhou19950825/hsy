@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
+
 
 /**
  * Created by zhubuqing on 2017/11/16.
@@ -39,7 +39,6 @@ public class AreaTableServiceImpl implements AreaTableService {
             AreaTable areaTable = areaTableRepository.getByMenuNodeId(menuNodeId);
             return areaTable;
         } catch (Exception e) {
-            LOGGER.info("addTableHeadNode:" + e.getMessage());
             return null;
         }
     }

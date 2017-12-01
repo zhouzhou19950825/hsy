@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 /**
  * Created by zhubuqing on 2017/11/16.
@@ -23,7 +22,6 @@ public class TableHeadNodeServiceImpl implements TableHeadNodeService {
         try {
             return tableHeadNodeRepository.save(tableHeadNode);
         } catch (Exception e) {
-            LOGGER.info("addTableHeadNode:" + e.getMessage());
             return null;
         }
     }
@@ -33,7 +31,6 @@ public class TableHeadNodeServiceImpl implements TableHeadNodeService {
         try {
             tableHeadNodeRepository.delete(tableHeadNodeId);
         } catch (Exception e) {
-            LOGGER.info("deleteTableHeadNode:" + e.getMessage());
         }
     }
 
@@ -42,7 +39,6 @@ public class TableHeadNodeServiceImpl implements TableHeadNodeService {
         try {
             return tableHeadNodeRepository.saveAndFlush(tableHeadNode);
         } catch (Exception e) {
-            LOGGER.info("updateTableHeadNode:" + e.getMessage());
             return null;
         }
     }
@@ -52,7 +48,6 @@ public class TableHeadNodeServiceImpl implements TableHeadNodeService {
         try {
             return tableHeadNodeRepository.getByAreaTableId(areaTableId);
         } catch (Exception e) {
-            LOGGER.info("getByAreaTableId:" + e.getMessage());
             return null;
         }
     }
@@ -62,7 +57,6 @@ public class TableHeadNodeServiceImpl implements TableHeadNodeService {
         try {
             return tableHeadNodeRepository.getByFatherId(fatherId);
         } catch (Exception e) {
-            LOGGER.info("getByFatherId:" + e.getMessage());
             return null;
         }
     }
@@ -72,7 +66,6 @@ public class TableHeadNodeServiceImpl implements TableHeadNodeService {
         try {
             return tableHeadNodeRepository.getOne(id);
         } catch (Exception e) {
-            LOGGER.info("getById:" + e.getMessage());
             return null;
         }
     }
@@ -82,7 +75,6 @@ public class TableHeadNodeServiceImpl implements TableHeadNodeService {
         try {
             return tableHeadNodeRepository.getByMenuNodeId(menuNodeId);
         } catch (Exception e) {
-            LOGGER.info("getByAreaId:" + e.getMessage());
         }
         return null;
     }
