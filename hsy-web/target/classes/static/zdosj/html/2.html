@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../min.js/2.min.js"></script>
+    <!--<script src="../useJs/2.js"></script>-->
+    <title></title>
+</head>
+<body style="text-align: center;">
+<div class="top_table">
+    <!-- <iframe src="2.html" frameborder="0" class="itable"></iframe> -->
+    <table>
+        <caption>
+            <h2 id="areaTableName"></h2>
+            <h2 id="areaTableEnglishName"></h2>
+        </caption>
+        <thead id="myTable">
+        <!--<tr>-->
+            <!--<th>国家或地区</th>-->
+            <!--<th>国土面积（平方公里）</th>-->
+            <!--<th>2005年人口密度</th>-->
+            <!--<th>2010年人口密度</th>-->
+            <!--<th>2015年人口密度</th>-->
+        <!--</tr>-->
+        </thead>
+        <tbody id="myTableData">
+        <!--<tr>-->
+        <!--<td>阿尔巴尼亚</td>-->
+        <!--<td>28748</td>-->
+        <!--<td>109.9</td>-->
+        <!--<td>106.3</td>-->
+        <!--<td>105.4</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>爱沙尼亚</td>-->
+        <!--<td>45339</td>-->
+        <!--<td>31.9</td>-->
+        <!--<td>31.4</td>-->
+        <!--<td> 30.9</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>波兰</td>-->
+        <!--<td>312685</td>-->
+        <!--<td>124.6</td>-->
+        <!--<td> 124.2</td>-->
+        <!--<td>124.1</td>-->
+        <!--</tr>-->
+        </tbody>
+    </table>
+    <!--<nav>-->
+    <!--<ul class="pagination">-->
+    <!--<li class="disabled"><a href="#" aria-label="Previous"> <span aria-hidden="true">首页</span></a>-->
+    <!--</li>-->
+    <!--<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«上一页</span> </a></li>-->
+    <!--<li class="active"><a href="#">1<span class="sr-only">(currentPage)</span></a></li>-->
+    <!--<li><a href="#" onclick="doPage(3,2)">2 <span class="sr-only" onclick="doPage(3,2)">(currentPage)</span></a>-->
+    <!--</li>-->
+    <!--<li><a href="#" aria-label="Next"> <span aria-hidden="true" onclick="doPage(4,0)">»下一页</span>-->
+    <!--</a></li>-->
+    <!--<li><a href="#" aria-label="Next"> <span aria-hidden="true" onclick="doPage(5,0)">末页</span>-->
+    <!--</a></li>-->
+    <!--<span class="jtable-page-size-change"> <span>每页: </span>-->
+    <!--<select onchange="doPageSize(this.value)">-->
+    <!--<option value="10" selected="selected">10</option>-->
+    <!--<option value="20">20</option>-->
+    <!--<option value="50">50</option>-->
+    <!--</select>-->
+    <!--</span>-->
+    <!--<li class="disabled">-->
+    <!--<span aria-hidden="true">总共16条-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</nav>-->
+</div>
+<br>
+<div class="bottom-echart">
+    <caption id="areaTableNameCap">国土面积与人口密度 柱状图<br>
+        <p id="areaTableEnglishNameCap">Country Area and Population Density</p></caption>
+    <div id="main" style="width: 80%;height:400px;"></div>
+</div>
+
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        // 表头
+        title: {
+            text: '',
+            subtext: ''
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            // 叶子结点
+            data: []
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        calculable: true,
+        xAxis: [
+            {
+                type: 'category',
+                // 国家地区
+                data: []
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        // 叶子节点的值
+        series: [
+//             {
+//                 name: '蒸发量',
+//                 type: 'bar',
+//                 data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+//                 markPoint: {
+//                     data: [
+//                         {type: 'max', name: '最大值'},
+//                         {type: 'min', name: '最小值'}
+//                     ]
+//                 },
+//                 markLine: {
+//                     data: [
+//                         {type: 'average', name: '平均值'}
+//                     ]
+//                 }
+//             }
+        ]
+    };
+</script>
+</body>
+</html>
