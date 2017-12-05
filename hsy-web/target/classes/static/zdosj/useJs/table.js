@@ -682,6 +682,11 @@ function sortMyNodes() {
             }
         }
     }
+
+    leafNodes.splice(0, leafNodes.length); // 清空数组
+    console.log(leafNodes); // 输出，空数组，即被清空了
+
+    getLeafNodes();
 }
 
 // 生成表格
