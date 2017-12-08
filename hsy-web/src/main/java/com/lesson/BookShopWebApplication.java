@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.lesson;
 
 import org.springframework.boot.SpringApplication;
@@ -18,5 +15,4 @@ public class BookShopWebApplication {
     public static void main(String[] args) {
         SpringApplication.run(BookShopWebApplication.class, args);
     }
-
 }

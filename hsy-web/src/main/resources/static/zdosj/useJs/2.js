@@ -127,10 +127,15 @@ function getAreaTableByMenuNodeId(menuNodeId) {
         },
         success: function (result) {
             if (result != null) {
+                var htmls = ""
+
+                htmls += result.areaTableName + " 柱状图<br>";
+
+                htmls += "<p>" + result.areaTableEnglishName + "</p>";
+
                 $("#areaTableName").html(result.areaTableName);
-                $("#areaTableNameCap").html(result.areaTableName + " 柱状图");
+                $("#areaTableNameCap").html(htmls);
                 $("#areaTableEnglishName").html(result.areaTableEnglishName);
-                $("#areaTableEnglishNameCap").html(result.areaTableEnglishName);
                 option.title.text = result.areaTableName;
                 option.title.subtext = result.areaTableEnglishName;
             }
