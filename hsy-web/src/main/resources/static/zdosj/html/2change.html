@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <script src="../js/echarts.min.js"></script>
-    <!--<script src="../min.js/2.min.js"></script>-->
-    <script src="../useJs/2.js"></script>
+
+    <!--<script src="../useJs/2.js"></script>-->
     <title></title>
 </head>
 <body style="text-align: center;">
@@ -22,11 +23,11 @@
         </caption>
         <thead id="myTable">
         <!--<tr>-->
-            <!--<th>国家或地区</th>-->
-            <!--<th>国土面积（平方公里）</th>-->
-            <!--<th>2005年人口密度</th>-->
-            <!--<th>2010年人口密度</th>-->
-            <!--<th>2015年人口密度</th>-->
+        <!--<th>国家或地区</th>-->
+        <!--<th>国土面积（平方公里）</th>-->
+        <!--<th>2005年人口密度</th>-->
+        <!--<th>2010年人口密度</th>-->
+        <!--<th>2015年人口密度</th>-->
         <!--</tr>-->
         </thead>
         <tbody id="myTableData">
@@ -81,69 +82,16 @@
 </div>
 <br>
 <div class="bottom-echart">
-    <caption id="areaTableNameCap">国土面积与人口密度 柱状图<br>
-        <p id="areaTableEnglishNameCap">Country Area and Population Density</p></caption>
+    <caption id="areaTableNameCap"><br>
+        <p id="areaTableEnglishNameCap"></p></caption>
     <div id="main" style="width: 80%;height:400px;"></div>
 </div>
 
 <script type="text/javascript">
-    var myChart = echarts.init(document.getElementById('main'));
-    option = {
-        // 表头
-        title: {
-            text: '',
-            subtext: ''
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            // 叶子结点
-            data: []
-        },
-        toolbox: {
-            show: true,
-            feature: {
-                mark: {show: true},
-                dataView: {show: true, readOnly: false},
-                magicType: {show: true, type: ['line', 'bar']},
-                restore: {show: true},
-                saveAsImage: {show: true}
-            }
-        },
-        calculable: true,
-        xAxis: [
-            {
-                type: 'category',
-                // 国家地区
-                data: []
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value'
-            }
-        ],
-        // 叶子节点的值
-        series: [
-//             {
-//                 name: '蒸发量',
-//                 type: 'bar',
-//                 data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
-//                 markPoint: {
-//                     data: [
-//                         {type: 'max', name: '最大值'},
-//                         {type: 'min', name: '最小值'}
-//                     ]
-//                 },
-//                 markLine: {
-//                     data: [
-//                         {type: 'average', name: '平均值'}
-//                     ]
-//                 }
-//             }
-        ]
-    };
+    //        路径配置,'./js/dist'本地文件路径
+
+
 </script>
+<script src="../useJs/2change.js"></script>
 </body>
 </html>
