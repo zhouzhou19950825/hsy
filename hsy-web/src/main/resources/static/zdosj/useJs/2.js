@@ -88,7 +88,7 @@ function pushDataInOption() {
         }
     }
 }
-
+//存放叶子节点
 function pushLeafNodesInOption() {
     for (var i = 0; i < leafNodes.length; i++) {
         if (leafNodes[i].id != -1)
