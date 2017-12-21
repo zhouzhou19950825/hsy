@@ -38,7 +38,7 @@ function beforeClick(treeId, treeNode) {
     } else {
         menuNodeId = treeNode.id;
         // showAreaTable(treeNode.id);
-        window.parent.sd.location.href = "2.html?menuNodeId=" + menuNodeId;
+        window.parent.sd.location.href = "2change.html?menuNodeId=" + menuNodeId;
     }
 }
 
