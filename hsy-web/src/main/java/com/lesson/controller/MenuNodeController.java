@@ -7,6 +7,7 @@ import com.lesson.service.MenuNodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -42,6 +43,7 @@ public class MenuNodeController {
     @GetMapping("/addMenuNode")
     public MenuNode addMenuNode(MenuNode menuNode) {
         try {
+            menuNode.setCreatTime(new Date());
             return menuNodeService.addMenuNode(menuNode);
         } catch (Exception e) {
             LOGGER.info("addMenuNode:" + e.getMessage());
@@ -120,5 +122,22 @@ public class MenuNodeController {
             LOGGER.info("updateOneMenuNode:" + e.getMessage());
         }
         return null;
+    }
+
+    /**
+     * 搜索条搜索
+     *
+     * @param menuNodeName
+     * @return
+     */
+    @GetMapping("/menuNodeSearchBar")
+    public List<MenuNode> menuNodeSearchBar(String menuNodeName) {
+        try {
+            List<MenuNode> menuNodeList = menuNodeService.menuNodeSearchBar(menuNodeName);
+            return menuNodeList;
+        } catch (Exception e) {
+            LOGGER.info("menuNodeSearchBar:" + e.getMessage());
+            return null;
+        }
     }
 }

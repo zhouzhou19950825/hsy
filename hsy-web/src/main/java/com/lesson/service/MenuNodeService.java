@@ -17,4 +17,6 @@ public interface MenuNodeService {
     List<MenuNode> getByAreaId(long areaId);
 
     MenuNode findOne(long menuNodeId);
+
+    List<MenuNode> menuNodeSearchBar(String menuNodeName);
 }

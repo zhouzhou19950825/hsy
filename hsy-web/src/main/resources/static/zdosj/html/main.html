@@ -12,9 +12,6 @@
     <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
 
-    <!-- <script type="text/javascript" src="../js/jquery.ztree.excheck.js"></script>
-    <script type="text/javascript" src="../js/jquery.ztree.exedit.js"></script> -->
-    <!--<script src="../useJs/1.js"></script>-->
     <script>
         $(document).ready(function () {
             $(".ifr").css({
@@ -28,30 +25,33 @@
     <style type="text/css" media="screen">
     </style>
     <style type="text/css">
-	#word{
-		position: absolute;
-		z-index: 99;
-		width: 145px;
-		height: auto;
-		background-color: white;
-		border: black solid 1px;
-		display: none;
-	}
-	.click_work{
-		padding-bottom: 8px;
-		font-weight:lighter;
-		font-size: 13px;
-		cursor:pointer;/*鼠标放上变成小手*/
-	}
-	.click_work:hover{
-		color: orange;
-		background-color: gray;
-	}
-	.error{
-		color: gray;
-		cursor:pointer;/*鼠标放上变成小手*/
-	}
-	</style>
+        #word {
+            position: absolute;
+            z-index: 99;
+            width: 145px;
+            height: auto;
+            background-color: white;
+            border: black solid 1px;
+            display: none;
+        }
+
+        .click_work {
+            padding-bottom: 8px;
+            font-weight: lighter;
+            font-size: 13px;
+            cursor: pointer; /*鼠标放上变成小手*/
+        }
+
+        .click_work:hover {
+            color: orange;
+            background-color: gray;
+        }
+
+        .error {
+            color: gray;
+            cursor: pointer; /*鼠标放上变成小手*/
+        }
+    </style>
 </head>
 <body style="overflow:-Scroll;overflow-y:hidden">
 <div class="header">
@@ -73,22 +73,24 @@
         <iframe src="1.html" frameborder="0" class="ifr"></iframe>
     </div>
     <div class="right">
-	<table align="center" cellspacing="0" cellpadding="10" border="0" style="float: left;margin:0;">
-	<tr>
-		<td style="position: relative;">
-			<input id="text" type="text" placeholder="搜索">
-			<input type="button" value="go">
-			<div id="word"></div>
-		</td>
-	</tr>
-</table>
-<!-- 引入DOM -->
-	<script type="text/javascript" src="../public/jquery.js"></script>
-	<script type="text/javascript" src="../public/JsonpAjax.js"></script>
-<!-- END DOM -->
-        <iframe  style="" name="sd" src="3.html" frameborder="0" class="ifchart"></iframe>
+        <table align="center" cellspacing="0" cellpadding="10" border="0" style="float: left;margin:0;">
+            <tr align="middle">
+                <td style="position: relative;">
+                    <input align="bottom" id="text" type="text" placeholder="搜索">
+                    <input type="button" value="go">
+                    <div id="word"></div>
+                    <!--<ul class="hidden" id="word">-->
+                    <!--<li></li>-->
+                    <!--</ul>-->
+                </td>
+            </tr>
+        </table>
+        <!-- 引入DOM -->
+        <script type="text/javascript" src="../public/jquery.js"></script>
+        <script type="text/javascript" src="../public/JsonpAjax.js"></script>
+        <!-- END DOM -->
+        <iframe style="" name="sd" src="3.html" frameborder="0" class="ifchart"></iframe>
     </div>
 </div>
-
 </body>
 </html>
